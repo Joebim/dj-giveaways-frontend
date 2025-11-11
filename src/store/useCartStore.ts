@@ -80,13 +80,22 @@ export const useCartStore = create<CartStore>((set) => ({
         isLoading: false,
       }));
     } catch (error) {
+      // Commented out error handling for dummy data
+      // set((state) => ({
+      //   ...state,
+      //   isLoading: false,
+      //   error:
+      //     error instanceof Error ? error.message : "Failed to load cart",
+      // }));
+      // throw error;
+      
+      // For dummy data, set empty cart on error
       set((state) => ({
         ...state,
+        ...deriveState(null),
         isLoading: false,
-        error:
-          error instanceof Error ? error.message : "Failed to load cart",
+        error: null,
       }));
-      throw error;
     }
   },
 
@@ -100,13 +109,21 @@ export const useCartStore = create<CartStore>((set) => ({
         isLoading: false,
       }));
     } catch (error) {
+      // Commented out error handling for dummy data
+      // set((state) => ({
+      //   ...state,
+      //   isLoading: false,
+      //   error:
+      //     error instanceof Error ? error.message : "Unable to add to cart",
+      // }));
+      // throw error;
+      
+      // For dummy data, don't throw error - just reset loading state
       set((state) => ({
         ...state,
         isLoading: false,
-        error:
-          error instanceof Error ? error.message : "Unable to add to cart",
+        error: null,
       }));
-      throw error;
     }
   },
 
@@ -120,15 +137,23 @@ export const useCartStore = create<CartStore>((set) => ({
         isLoading: false,
       }));
     } catch (error) {
+      // Commented out error handling for dummy data
+      // set((state) => ({
+      //   ...state,
+      //   isLoading: false,
+      //   error:
+      //     error instanceof Error
+      //       ? error.message
+      //       : "Unable to update cart item",
+      // }));
+      // throw error;
+      
+      // For dummy data, don't throw error - just reset loading state
       set((state) => ({
         ...state,
         isLoading: false,
-        error:
-          error instanceof Error
-            ? error.message
-            : "Unable to update cart item",
+        error: null,
       }));
-      throw error;
     }
   },
 
@@ -142,15 +167,23 @@ export const useCartStore = create<CartStore>((set) => ({
         isLoading: false,
       }));
     } catch (error) {
+      // Commented out error handling for dummy data
+      // set((state) => ({
+      //   ...state,
+      //   isLoading: false,
+      //   error:
+      //     error instanceof Error
+      //       ? error.message
+      //       : "Unable to remove cart item",
+      // }));
+      // throw error;
+      
+      // For dummy data, don't throw error - just reset loading state
       set((state) => ({
         ...state,
         isLoading: false,
-        error:
-          error instanceof Error
-            ? error.message
-            : "Unable to remove cart item",
+        error: null,
       }));
-      throw error;
     }
   },
 
@@ -164,15 +197,24 @@ export const useCartStore = create<CartStore>((set) => ({
         isLoading: false,
       }));
     } catch (error) {
+      // Commented out error handling for dummy data
+      // set((state) => ({
+      //   ...state,
+      //   isLoading: false,
+      //   error:
+      //     error instanceof Error
+      //       ? error.message
+      //       : "Unable to clear cart",
+      // }));
+      // throw error;
+      
+      // For dummy data, clear cart locally even if service fails
       set((state) => ({
         ...state,
+        ...deriveState(emptyCart),
         isLoading: false,
-        error:
-          error instanceof Error
-            ? error.message
-            : "Unable to clear cart",
+        error: null,
       }));
-      throw error;
     }
   },
 }));

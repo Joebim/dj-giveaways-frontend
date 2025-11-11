@@ -45,7 +45,8 @@ const Checkout: React.FC = () => {
 
   useEffect(() => {
     fetchCart().catch(() => {
-      toast.error("Unable to load cart. Please refresh and try again.");
+      // Commented out error toast for dummy data
+      // toast.error("Unable to load cart. Please refresh and try again.");
     });
   }, [fetchCart]);
 
@@ -89,7 +90,8 @@ const Checkout: React.FC = () => {
     e.preventDefault();
 
     if (items.length === 0) {
-      toast.error("Your cart is empty. Add tickets before checking out.");
+      // Commented out error toast for dummy data - just return silently
+      // toast.error("Your cart is empty. Add tickets before checking out.");
       return;
     }
 

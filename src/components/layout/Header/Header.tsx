@@ -10,10 +10,17 @@ import { motion } from 'framer-motion';
 
 const Header: React.FC = () => {
     const { isAuthenticated, logout } = useAuthStore();
-    const { itemCount } = useCartStore();
+    const { itemCount, fetchCart } = useCartStore();
     const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
     const navigate = useNavigate();
     const location = useLocation();
+
+    // Initialize cart on mount to show item count
+    React.useEffect(() => {
+        fetchCart().catch(() => {
+            // Errors handled silently for dummy data
+        });
+    }, [fetchCart]);
 
     const handleLogout = async () => {
         try {
