@@ -118,18 +118,16 @@ h4 {
 }
 
 .gold-glow {
-  box-shadow: 0 0 20px rgba(0, 112, 243, 0.4), 0 0 40px rgba(0, 112, 243, 0.2),
-    0 0 60px rgba(0, 112, 243, 0.1);
+  box-shadow: 0 0 10px rgba(0, 112, 243, 0.4), 0 0 20px rgba(0, 112, 243, 0.2);
 }
 
 .gold-text-glow {
-  text-shadow: 0 0 10px rgba(0, 112, 243, 0.6), 0 0 20px rgba(0, 112, 243, 0.4),
-    0 0 30px rgba(0, 112, 243, 0.2);
+  text-shadow: 0 0 6px rgba(0, 112, 243, 0.6), 0 0 12px rgba(0, 112, 243, 0.4);
 }
 
 .gold-border-glow {
   border-color: #0070f3;
-  box-shadow: 0 0 15px rgba(0, 112, 243, 0.5), 0 0 30px rgba(0, 112, 243, 0.3);
+  box-shadow: 0 0 8px rgba(0, 112, 243, 0.5), 0 0 16px rgba(0, 112, 243, 0.3);
 }
 
 .gold-hover-glow {
@@ -137,31 +135,30 @@ h4 {
 }
 
 .gold-hover-glow:hover {
-  box-shadow: 0 0 25px rgba(0, 112, 243, 0.6), 0 0 50px rgba(0, 112, 243, 0.4),
-    0 0 75px rgba(0, 112, 243, 0.2);
+  box-shadow: 0 0 12px rgba(0, 112, 243, 0.6), 0 0 24px rgba(0, 112, 243, 0.4);
 }
 
 /* Neon Orange Glow */
 .neon-orange-glow {
-  box-shadow: 0 0 20px rgba(255, 149, 0, 0.5), 0 0 40px rgba(255, 149, 0, 0.3);
+  box-shadow: 0 0 10px rgba(255, 149, 0, 0.5), 0 0 20px rgba(255, 149, 0, 0.3);
 }
 
 .neon-orange-text {
-  text-shadow: 0 0 10px rgba(255, 149, 0, 0.8), 0 0 20px rgba(255, 149, 0, 0.5);
+  text-shadow: 0 0 6px rgba(255, 149, 0, 0.8), 0 0 12px rgba(255, 149, 0, 0.5);
 }
 
 /* Electric Green Glow */
 .electric-green-glow {
-  box-shadow: 0 0 20px rgba(0, 255, 133, 0.5), 0 0 40px rgba(0, 255, 133, 0.3);
+  box-shadow: 0 0 10px rgba(0, 255, 133, 0.5), 0 0 20px rgba(0, 255, 133, 0.3);
 }
 
 .electric-green-text {
-  text-shadow: 0 0 10px rgba(0, 255, 133, 0.8), 0 0 20px rgba(0, 255, 133, 0.5);
+  text-shadow: 0 0 6px rgba(0, 255, 133, 0.8), 0 0 12px rgba(0, 255, 133, 0.5);
 }
 
 /* Waveform Yellow Glow */
 .waveform-yellow-glow {
-  box-shadow: 0 0 20px rgba(247, 201, 72, 0.5), 0 0 40px rgba(247, 201, 72, 0.3);
+  box-shadow: 0 0 10px rgba(247, 201, 72, 0.5), 0 0 20px rgba(247, 201, 72, 0.3);
 }
 
 /* Pulsing Animation for Neon Effects */
@@ -169,11 +166,11 @@ h4 {
   0%,
   100% {
     opacity: 1;
-    box-shadow: 0 0 20px rgba(0, 112, 243, 0.4), 0 0 40px rgba(0, 112, 243, 0.2);
+    box-shadow: 0 0 10px rgba(0, 112, 243, 0.4), 0 0 20px rgba(0, 112, 243, 0.2);
   }
   50% {
     opacity: 0.8;
-    box-shadow: 0 0 30px rgba(0, 112, 243, 0.6), 0 0 60px rgba(0, 112, 243, 0.4);
+    box-shadow: 0 0 15px rgba(0, 112, 243, 0.6), 0 0 30px rgba(0, 112, 243, 0.4);
   }
 }
 
@@ -268,12 +265,12 @@ h4 {
   height: 2px;
   background: linear-gradient(90deg, #0070f3 0%, #00ff85 100%);
   transition: width 0.3s ease;
-  box-shadow: 0 0 10px rgba(0, 112, 243, 0.5);
+  box-shadow: 0 0 6px rgba(0, 112, 243, 0.5);
 }
 
 .gold-link:hover {
   color: #3291ff;
-  text-shadow: 0 0 10px rgba(0, 112, 243, 0.5);
+  text-shadow: 0 0 6px rgba(0, 112, 243, 0.5);
 }
 
 .gold-link:hover::after {
@@ -325,11 +322,10 @@ h4 {
 @keyframes glow {
   0%,
   100% {
-    box-shadow: 0 0 20px rgba(0, 112, 243, 0.4);
+    box-shadow: 0 0 10px rgba(0, 112, 243, 0.4);
   }
   50% {
-    box-shadow: 0 0 30px rgba(0, 112, 243, 0.7), 0 0 50px rgba(0, 112, 243, 0.4),
-      0 0 70px rgba(0, 112, 243, 0.2);
+    box-shadow: 0 0 15px rgba(0, 112, 243, 0.7), 0 0 25px rgba(0, 112, 243, 0.4);
   }
 }
 
@@ -394,12 +390,12 @@ h4 {
 ::-webkit-scrollbar-thumb {
   background: linear-gradient(180deg, #0070f3 0%, #0051cc 100%);
   border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 112, 243, 0.5);
+  box-shadow: 0 0 6px rgba(0, 112, 243, 0.5);
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(180deg, #3291ff 0%, #0070f3 100%);
-  box-shadow: 0 0 15px rgba(0, 112, 243, 0.7);
+  box-shadow: 0 0 10px rgba(0, 112, 243, 0.7);
 }
 
 @theme inline {

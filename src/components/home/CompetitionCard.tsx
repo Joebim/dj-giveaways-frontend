@@ -63,7 +63,7 @@ const CompetitionCard: React.FC<CompetitionCardProps> = ({ competition }) => {
                 initial={{ width: 0 }}
                 animate={{ width: `${competition.progress}%` }}
                 transition={{ duration: 1, ease: "easeOut" }}
-                style={{ boxShadow: '0 0 10px rgba(0, 112, 243, 0.6)' }}
+                style={{ boxShadow: '0 0 6px rgba(0, 112, 243, 0.6)' }}
               ></motion.div>
             </div>
           </div>

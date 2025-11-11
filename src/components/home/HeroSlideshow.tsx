@@ -183,7 +183,7 @@ const HeroSlideshow: React.FC<HeroSlideshowProps> = ({
                         animate={{ width: `${progress}%` }}
                         transition={{ duration: 1, delay: 0.7 }}
                         className="h-full gold-gradient"
-                        style={{ boxShadow: '0 0 20px rgba(0, 112, 243, 0.6)' }}
+                        style={{ boxShadow: '0 0 10px rgba(0, 112, 243, 0.6)' }}
                       />
                     </div>
                     <p className="text-sm text-navy-primary mt-2">
