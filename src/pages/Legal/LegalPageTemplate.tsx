@@ -1,8 +1,8 @@
 import React from "react";
-import { useQuery } from "@tanstack/react-query";
+// import { useQuery } from "@tanstack/react-query";
 import { motion } from "framer-motion";
-import toast from "react-hot-toast";
-import { contentService } from "../../services";
+// import toast from "react-hot-toast";
+// import { contentService } from "../../services";
 import type { LegalPageContent, LegalSection } from "../../types";
 
 interface LegalPageTemplateProps {
@@ -14,17 +14,17 @@ const renderSection = (section: LegalSection, index: number) => {
   return (
     <motion.div
       key={`${section.heading}-${index}`}
-      className="bg-black border border-gold-primary/20 rounded-xl p-8 hover:border-gold-primary/40 transition-all duration-300"
+      className="bg-black-soft border border-gold-primary/30 rounded-xl p-8 hover:border-gold-primary/70 transition-all duration-300 gold-hover-glow"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.05 }}
     >
-      <h3 className="text-2xl font-light text-white mb-4">
+      <h3 className="text-2xl font-bold text-navy-light mb-4 gold-text-glow">
         {section.heading}
       </h3>
       <div className="space-y-4">
         {section.body.map((paragraph, idx) => (
-          <p key={idx} className="text-white/70 leading-relaxed font-light">
+          <p key={idx} className="text-navy-primary leading-relaxed font-medium">
             {paragraph}
           </p>
         ))}
@@ -32,11 +32,11 @@ const renderSection = (section: LegalSection, index: number) => {
       {section.list && (
         <div className="mt-6">
           {section.list.title && (
-            <p className="text-white/80 font-semibold mb-3">
+            <p className="text-navy-light font-bold mb-3">
               {section.list.title}
             </p>
           )}
-          <ul className="space-y-2 list-disc list-inside text-white/70 font-light">
+          <ul className="space-y-2 list-disc list-inside text-navy-primary font-medium">
             {section.list.items.map((item, itemIdx) => (
               <li key={itemIdx}>{item}</li>
             ))}
@@ -48,30 +48,33 @@ const renderSection = (section: LegalSection, index: number) => {
 };
 
 const LegalPageTemplate: React.FC<LegalPageTemplateProps> = ({
-  slug,
   defaultContent,
 }) => {
-  const { data, isLoading, isError } = useQuery({
-    queryKey: ["content", "page", slug],
-    queryFn: () => contentService.getPage(slug),
-    retry: 0,
-    staleTime: 5 * 60 * 1000,
-  });
+  // Commented out API call - using default content
+  // const { data, isLoading, isError } = useQuery({
+  //   queryKey: ["content", "page", slug],
+  //   queryFn: () => contentService.getPage(slug),
+  //   retry: 0,
+  //   staleTime: 5 * 60 * 1000,
+  // });
 
-  React.useEffect(() => {
-    if (isError) {
-      toast.error("Showing the latest available version of this page.");
-    }
-  }, [isError]);
+  // Commented out error toast
+  // React.useEffect(() => {
+  //   if (isError) {
+  //     toast.error("Showing the latest available version of this page.");
+  //   }
+  // }, [isError]);
 
-  const page = data ?? defaultContent;
+  // Use default content directly
+  const page = defaultContent;
+  const isLoading = false;
 
   return (
     <div className="min-h-screen bg-black">
-      <section className="relative py-32 bg-black-soft border-b border-gold-primary/10 overflow-hidden">
+      <section className="relative py-32 bg-black-soft border-b border-gold-primary/30 overflow-hidden">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
           <motion.h1
-            className="text-5xl md:text-6xl font-light text-white mb-6 tracking-tight"
+            className="text-5xl md:text-6xl font-bold text-navy-light mb-6 tracking-tight"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -80,28 +83,12 @@ const LegalPageTemplate: React.FC<LegalPageTemplateProps> = ({
           </motion.h1>
           {page.subtitle && (
             <motion.p
-              className="text-xl text-white/70 font-light max-w-3xl"
+              className="text-xl text-navy-primary font-medium max-w-3xl"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               {page.subtitle}
-            </motion.p>
-          )}
-          {(page.updatedAt || isLoading) && (
-            <motion.p
-              className="text-sm text-white/50 font-light mt-6"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-            >
-              {isLoading
-                ? "Checking for updates..."
-                : `Last updated: ${new Date(page.updatedAt ?? "").toLocaleDateString("en-GB", {
-                    year: "numeric",
-                    month: "long",
-                    day: "numeric",
-                  })}`}
             </motion.p>
           )}
         </div>
@@ -114,13 +101,13 @@ const LegalPageTemplate: React.FC<LegalPageTemplateProps> = ({
               {[...Array(3)].map((_, index) => (
                 <div
                   key={index}
-                  className="bg-black border border-gold-primary/10 rounded-xl p-8 animate-pulse"
+                  className="bg-black-soft border border-gold-primary/30 rounded-xl p-8 animate-pulse"
                 >
-                  <div className="h-6 w-64 bg-white/10 rounded mb-4" />
+                  <div className="h-6 w-64 bg-black/50 rounded mb-4" />
                   <div className="space-y-3">
-                    <div className="h-4 w-full bg-white/5 rounded" />
-                    <div className="h-4 w-11/12 bg-white/5 rounded" />
-                    <div className="h-4 w-10/12 bg-white/5 rounded" />
+                    <div className="h-4 w-full bg-black/30 rounded" />
+                    <div className="h-4 w-11/12 bg-black/30 rounded" />
+                    <div className="h-4 w-10/12 bg-black/30 rounded" />
                   </div>
                 </div>
               ))}

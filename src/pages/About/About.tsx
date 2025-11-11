@@ -27,12 +27,12 @@ const About: React.FC = () => {
     ];
 
     return (
-        <div className="min-h-screen bg-white">
+        <div className="min-h-screen bg-black">
             {/* Hero Section */}
-            <section className="py-32 bg-gray-50 border-b border-gold-primary/20">
+            <section className="py-32 bg-black border-b border-gold-primary/20">
                 <div className="max-w-[1400px] mx-auto px-6 lg:px-12 text-center">
                     <motion.h1
-                        className="text-6xl font-light text-navy-primary mb-6  tracking-tight"
+                        className="text-6xl font-light text-navy-light mb-6 tracking-tight"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
@@ -40,7 +40,7 @@ const About: React.FC = () => {
                         About <span className="text-gold-primary">DJ Giveaways</span>
                     </motion.h1>
                     <motion.p
-                        className="text-xl text-gray-700 font-light max-w-3xl mx-auto"
+                        className="text-xl text-white/80 font-light max-w-3xl mx-auto"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.2 }}
@@ -51,7 +51,7 @@ const About: React.FC = () => {
             </section>
 
             {/* About Content */}
-            <section className="py-20 bg-white">
+            <section className="py-20 bg-black">
                 <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
                         <motion.div
@@ -59,13 +59,13 @@ const About: React.FC = () => {
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.6 }}
                         >
-                            <h2 className="text-4xl font-light text-navy-primary mb-6 ">
+                            <h2 className="text-4xl font-light text-navy-light mb-6 tracking-tight">
                                 Our Story
                             </h2>
-                            <p className="text-gray-700 leading-relaxed mb-4 font-light">
+                            <p className="text-white/80 leading-relaxed mb-4 font-light">
                                 Top Gear Autos NI LTD, trading as McKinney Competitions, Company Number NI667309. We are the UK and Ireland's leading competition company, dedicated to providing exciting and fair competitions with premium prizes.
                             </p>
-                            <p className="text-gray-700 leading-relaxed mb-4 font-light">
+                            <p className="text-white/80 leading-relaxed mb-4 font-light">
                                 Since our inception, we've awarded over £65 million in prizes and created thousands of happy winners. Our commitment to transparency, fairness, and customer satisfaction has made us a trusted name in the competition industry.
                             </p>
                             <p className="text-white/70 leading-relaxed font-light">
@@ -73,13 +73,13 @@ const About: React.FC = () => {
                             </p>
                         </motion.div>
                         <motion.div
-                            className="bg-gray-50 border border-gold-primary/20 rounded-lg p-8"
+                            className="bg-black-soft border border-gold-primary/30 rounded-lg p-8"
                             initial={{ opacity: 0, x: 20 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.6 }}
                         >
-                            <h3 className="text-2xl font-light text-navy-primary mb-6 ">Company Details</h3>
-                            <ul className="space-y-4 text-gray-700 font-light">
+                            <h3 className="text-2xl font-light text-navy-light mb-6 tracking-tight">Company Details</h3>
+                            <ul className="space-y-4 text-white/80 font-light">
                                 <li><strong className="text-gold-primary">Company Name:</strong> Top Gear Autos NI LTD</li>
                                 <li><strong className="text-gold-primary">Trading As:</strong> McKinney Competitions</li>
                                 <li><strong className="text-gold-primary">Company Number:</strong> NI667309</li>
@@ -95,7 +95,7 @@ const About: React.FC = () => {
                             return (
                                 <motion.div
                                     key={index}
-                                    className="bg-gray-50 border border-gold-primary/20 rounded-lg p-6 text-center hover:border-gold-primary/50 transition-all duration-300"
+                                    className="bg-black-soft border border-gold-primary/30 rounded-lg p-6 text-center hover:border-gold-primary/50 transition-all duration-300"
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -104,8 +104,8 @@ const About: React.FC = () => {
                                     <div className="w-16 h-16 rounded-full bg-gold-primary/10 border border-gold-primary/30 flex items-center justify-center mx-auto mb-4">
                                         <Icon className="w-8 h-8 text-gold-primary" />
                                     </div>
-                                    <h3 className="text-xl font-light text-navy-primary mb-3 ">{feature.title}</h3>
-                                    <p className="text-gray-600 text-sm font-light">{feature.description}</p>
+                                    <h3 className="text-xl font-light text-navy-light mb-3 tracking-tight">{feature.title}</h3>
+                                    <p className="text-white/70 text-sm font-light">{feature.description}</p>
                                 </motion.div>
                             );
                         })}
@@ -114,7 +114,7 @@ const About: React.FC = () => {
             </section>
 
             {/* Responsible Gambling */}
-            <section className="py-20 bg-gray-50 border-t border-gold-primary/20">
+            <section className="py-20 bg-black-soft border-t border-gold-primary/30">
                 <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
                     <motion.div
                         className="max-w-4xl mx-auto text-center"
@@ -122,10 +122,10 @@ const About: React.FC = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
                     >
-                        <h2 className="text-4xl font-light text-navy-primary mb-6 ">
+                        <h2 className="text-4xl font-light text-navy-light mb-6 tracking-tight">
                             Responsible <span className="text-gold-primary">Gambling</span>
                         </h2>
-                        <p className="text-gray-700 leading-relaxed mb-6 font-light">
+                        <p className="text-white/80 leading-relaxed mb-6 font-light">
                             This site is for adults 18+. By accessing this website, you confirm that you are over 18 and understand the risks associated with gambling. If you're underage, please leave now.
                         </p>
                         <p className="text-white/70 leading-relaxed mb-6 font-light">

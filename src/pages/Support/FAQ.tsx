@@ -1,9 +1,9 @@
 import React from "react";
-import { useQuery } from "@tanstack/react-query";
+// import { useQuery } from "@tanstack/react-query";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaPlus, FaMinus } from "react-icons/fa";
-import toast from "react-hot-toast";
-import { contentService } from "../../services";
+// import toast from "react-hot-toast";
+// import { contentService } from "../../services";
 import type { FAQItem } from "../../types";
 
 const fallbackFaqs: FAQItem[] = [
@@ -47,20 +47,24 @@ const fallbackFaqs: FAQItem[] = [
 const FAQ: React.FC = () => {
   const [expandedId, setExpandedId] = React.useState<string | null>(null);
 
-  const { data, isLoading, isError } = useQuery({
-    queryKey: ["content", "faqs"],
-    queryFn: () => contentService.getFaqs(),
-    retry: 0,
-    staleTime: 5 * 60 * 1000,
-  });
+  // Commented out API call - using fallback data
+  // const { data, isLoading, isError } = useQuery({
+  //   queryKey: ["content", "faqs"],
+  //   queryFn: () => contentService.getFaqs(),
+  //   retry: 0,
+  //   staleTime: 5 * 60 * 1000,
+  // });
 
-  React.useEffect(() => {
-    if (isError) {
-      toast.error("Unable to load the latest FAQs. Showing the standard list.");
-    }
-  }, [isError]);
+  // Commented out error toast
+  // React.useEffect(() => {
+  //   if (isError) {
+  //     toast.error("Unable to load the latest FAQs. Showing the standard list.");
+  //   }
+  // }, [isError]);
 
-  const faqs = data?.faqs ?? fallbackFaqs;
+  // Use fallback data directly
+  const faqs = fallbackFaqs;
+  const isLoading = false;
 
   const toggle = (id: string) => {
     setExpandedId((prev) => (prev === id ? null : id));
@@ -68,18 +72,18 @@ const FAQ: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-black">
-      <section className="py-32 bg-black-soft border-b border-gold-primary/10">
+      <section className="py-32 bg-black-soft border-b border-gold-primary/30">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12 text-center">
           <motion.h1
-            className="text-5xl md:text-6xl font-light text-white mb-6 tracking-tight"
+            className="text-5xl md:text-6xl font-bold text-navy-light mb-6 tracking-tight"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            Frequently Asked Questions
+            Frequently Asked <span className="text-gold-primary gold-text-glow">Questions</span>
           </motion.h1>
           <motion.p
-            className="text-xl text-white/70 font-light max-w-3xl mx-auto"
+            className="text-xl text-navy-primary font-medium max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -97,11 +101,11 @@ const FAQ: React.FC = () => {
               {[...Array(5)].map((_, index) => (
                 <div
                   key={index}
-                  className="bg-black border border-gold-primary/10 rounded-xl p-6 animate-pulse"
+                  className="bg-black-soft border border-gold-primary/30 rounded-xl p-6 animate-pulse"
                 >
-                  <div className="h-5 w-3/4 bg-white/10 rounded mb-3" />
-                  <div className="h-4 w-full bg-white/5 rounded mb-2" />
-                  <div className="h-4 w-5/6 bg-white/5 rounded" />
+                  <div className="h-5 w-3/4 bg-black/50 rounded mb-3" />
+                  <div className="h-4 w-full bg-black/30 rounded mb-2" />
+                  <div className="h-4 w-5/6 bg-black/30 rounded" />
                 </div>
               ))}
             </div>
@@ -112,7 +116,7 @@ const FAQ: React.FC = () => {
                 return (
                   <motion.div
                     key={faq.id}
-                    className="border border-gold-primary/20 rounded-xl overflow-hidden bg-black-soft"
+                    className="border border-gold-primary/30 rounded-xl overflow-hidden bg-black-soft hover:border-gold-primary/70 transition-all gold-hover-glow"
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.4 }}
@@ -122,10 +126,10 @@ const FAQ: React.FC = () => {
                       className="w-full flex items-center justify-between text-left px-6 py-5 md:px-8 md:py-6 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-primary/50"
                     >
                       <div>
-                        <p className="text-sm uppercase text-gold-primary/80 tracking-wide font-semibold mb-1">
+                        <p className="text-sm uppercase text-gold-primary tracking-wide font-semibold mb-1 gold-text-glow">
                           {faq.category ?? "General"}
                         </p>
-                        <h3 className="text-xl font-light text-white">
+                        <h3 className="text-xl font-bold text-navy-light">
                           {faq.question}
                         </h3>
                       </div>
@@ -143,7 +147,7 @@ const FAQ: React.FC = () => {
                           exit={{ height: 0, opacity: 0 }}
                           transition={{ duration: 0.35, ease: "easeInOut" }}
                         >
-                          <p className="text-white/70 leading-relaxed font-light border-t border-gold-primary/10 pt-6">
+                          <p className="text-navy-primary leading-relaxed font-medium border-t border-gold-primary/30 pt-6">
                             {faq.answer}
                           </p>
                         </motion.div>

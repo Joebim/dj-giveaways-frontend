@@ -1,9 +1,7 @@
 import React, { useEffect, useMemo, useState } from "react";
-import { useQuery } from "@tanstack/react-query";
 import { FaUsers, FaHeart, FaStar } from "react-icons/fa";
 import { PiTrophyFill } from "react-icons/pi";
 import { MdOutlineAttachMoney } from "react-icons/md";
-import toast from "react-hot-toast";
 import { motion } from "framer-motion";
 import useEmblaCarousel from "embla-carousel-react";
 import {
@@ -18,7 +16,7 @@ import ChampionCard from "../../components/home/ChampionCard";
 import ReviewCard from "../../components/home/ReviewCard";
 import RecentDrawCard from "../../components/home/RecentDrawCard";
 import HeroSlideshow from "../../components/home/HeroSlideshow";
-import { contentService } from "../../services";
+import { DUMMY_HOME_CONTENT } from "../../data/dummyData";
 
 const baseIconClasses = "w-8 h-8 text-gold-primary";
 
@@ -43,21 +41,27 @@ const Home: React.FC = () => {
   const [championsCarouselApi, setChampionsCarouselApi] =
     useState<ReturnType<typeof useEmblaCarousel>[1] | null>(null);
 
-  const {
-    data: homeContent,
-    isLoading,
-    isError,
-  } = useQuery({
-    queryKey: ["content", "home"],
-    queryFn: () => contentService.getHomeContent(),
-    staleTime: 5 * 60 * 1000,
-  });
+  // Commented out API call - using dummy data
+  // const {
+  //   data: homeContent,
+  //   isLoading,
+  //   isError,
+  // } = useQuery({
+  //   queryKey: ["content", "home"],
+  //   queryFn: () => contentService.getHomeContent(),
+  //   staleTime: 5 * 60 * 1000,
+  // });
 
-  useEffect(() => {
-    if (isError) {
-      toast.error("Unable to load latest home content. Showing cached data.");
-    }
-  }, [isError]);
+  // Use dummy data directly
+  const homeContent = DUMMY_HOME_CONTENT;
+  const isLoading = false;
+
+  // Commented out error toast
+  // useEffect(() => {
+  //   if (isError) {
+  //     toast.error("Unable to load latest home content. Showing cached data.");
+  //   }
+  // }, [isError]);
 
   useEffect(() => {
     if (!championsCarouselApi) return;
@@ -75,15 +79,22 @@ const Home: React.FC = () => {
 
   const competitions = useMemo(() => {
     return (
-      homeContent?.competitions.map((competition) => ({
-        id: competition.id,
-        title: competition.title,
-        image: competition.image ?? FALLBACK_IMAGE,
-        price: Number(competition.ticketPrice || 0),
-        soldTickets: Number(competition.progress?.soldTickets ?? competition.soldTickets ?? 0),
-        maxTickets: Number(competition.progress?.maxTickets ?? competition.maxTickets ?? 0),
-        progress: Number(competition.progress?.percentage ?? 0),
-      })) ?? []
+      homeContent?.competitions.map((competition) => {
+        const price = Number(competition.ticketPrice ?? 0);
+        const soldTickets = Number(competition.progress?.soldTickets ?? competition.soldTickets ?? 0);
+        const maxTickets = Number(competition.progress?.maxTickets ?? competition.maxTickets ?? 0);
+        const progress = Number(competition.progress?.percentage ?? 0);
+
+        return {
+          id: competition.id,
+          title: competition.title,
+          image: competition.image ?? FALLBACK_IMAGE,
+          price,
+          soldTickets,
+          maxTickets,
+          progress,
+        };
+      }) ?? []
     );
   }, [homeContent]);
 

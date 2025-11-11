@@ -1,62 +1,49 @@
 import React, { useMemo, useState } from "react";
-import { useQuery } from "@tanstack/react-query";
+// import { useQuery } from "@tanstack/react-query";
 import { motion } from "framer-motion";
-import toast from "react-hot-toast";
+// import toast from "react-hot-toast";
 import CompetitionCard from "../../components/home/CompetitionCard";
-import { competitionService } from "../../services";
-import homeData from "../../data/homeData.json";
+// import { competitionService } from "../../services";
+import { DUMMY_COMPETITIONS } from "../../data/dummyData";
 
-const FALLBACK_COMPETITIONS = homeData.competitions.map((competition) => ({
-  id: String(competition.id),
-  title: competition.title,
-  image: competition.image,
-  price: competition.price,
-  soldTickets: competition.soldTickets,
-  maxTickets: competition.maxTickets,
-  progress: competition.progress,
-}));
-
-type CompetitionsQueryResult = Awaited<
-  ReturnType<typeof competitionService.getCompetitions>
->;
+// Commented out API call - using dummy data
+// type CompetitionsQueryResult = Awaited<
+//   ReturnType<typeof competitionService.getCompetitions>
+//>;
 
 const CompetitionsList: React.FC = () => {
   const [page, setPage] = useState(1);
   const limit = 12;
 
-  const { data, isLoading, isError } = useQuery<CompetitionsQueryResult>({
-    queryKey: ["competitions", "public", page, limit],
-    queryFn: () => competitionService.getCompetitions({ page, limit }),
-    staleTime: 60 * 1000,
-    placeholderData: (previousData) => previousData,
-  });
+  // Commented out API call
+  // const { data, isLoading, isError } = useQuery<CompetitionsQueryResult>({
+  //   queryKey: ["competitions", "public", page, limit],
+  //   queryFn: () => competitionService.getCompetitions({ page, limit }),
+  //   staleTime: 60 * 1000,
+  //   placeholderData: (previousData) => previousData,
+  // });
 
+  // Use dummy data
   const competitions = useMemo(() => {
-    if (!data?.competitions?.length) {
-      return FALLBACK_COMPETITIONS;
-    }
-
-    return data.competitions.map((competition) => ({
+    return DUMMY_COMPETITIONS.map((competition) => ({
       id: competition.id,
       title: competition.title,
-      image: competition.images[0]?.url ?? homeData.hero.image,
-      price: competition.ticketPrice,
+      image: competition.image,
+      price: competition.price,
       soldTickets: competition.soldTickets,
       maxTickets: competition.maxTickets,
-      progress: competition.progress?.percentage ?? 0,
+      progress: competition.progress,
     }));
-  }, [data]);
+  }, []);
 
-  const pagination = (data?.meta?.pagination ?? {}) as {
-    page?: number;
-    totalPages?: number;
-  };
+  const isLoading = false;
+  // const isError = false;
+  const totalPages = 1;
 
-  const totalPages = pagination.totalPages ?? 1;
-
-  if (isError) {
-    toast.error("Unable to load competitions. Showing cached showcase instead.");
-  }
+  // Commented out error toast
+  // if (isError) {
+  //   toast.error("Unable to load competitions. Showing cached showcase instead.");
+  // }
 
   return (
     <div className="min-h-screen bg-black py-16">
@@ -75,7 +62,7 @@ const CompetitionsList: React.FC = () => {
           </p>
         </motion.div>
 
-        {isLoading && !data ? (
+        {isLoading ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {Array.from({ length: limit }).map((_, index) => (
               <div
