@@ -137,6 +137,7 @@ function App() {
               </Layout>
             }
           />
+          {/* Legal Pages - Old routes (backward compatibility) */}
           <Route
             path="/terms"
             element={
@@ -179,6 +180,58 @@ function App() {
           />
           <Route
             path="/complaints"
+            element={
+              <Layout>
+                <Complaints />
+              </Layout>
+            }
+          />
+          
+          {/* Legal Pages - New routes with /legal/ prefix */}
+          <Route
+            path="/legal/terms"
+            element={
+              <Layout>
+                <TermsAndConditions />
+              </Layout>
+            }
+          />
+          <Route
+            path="/legal/terms-of-use"
+            element={
+              <Layout>
+                <TermsOfUse />
+              </Layout>
+            }
+          />
+          <Route
+            path="/legal/acceptable-use"
+            element={
+              <Layout>
+                <AcceptableUse />
+              </Layout>
+            }
+          />
+          <Route
+            path="/legal/privacy"
+            element={
+              <Layout>
+                <PrivacyPolicy />
+              </Layout>
+            }
+          />
+          
+          {/* Support Pages - New routes with /support/ prefix */}
+          <Route
+            path="/support/faq"
+            element={
+              <Layout>
+                <FAQ />
+              </Layout>
+            }
+          />
+          <Route
+            path="/support/complaints"
             element={
               <Layout>
                 <Complaints />
