@@ -1,0 +1,294 @@
+{
+  "hero": {
+    "image": "https://res.cloudinary.com/dm3586huj/image/upload/v1762199166/competition-stand-for-a-luxury-super-car-prize-draw-in-the-departure-BEM7G6_tae0yr.jpg",
+    "alt": "Hero banner"
+  },
+  "competitions": [
+    {
+      "id": "1",
+      "title": "£500 ASOS Voucher",
+      "image": "https://res.cloudinary.com/dtaegi6gk/image/upload/v1761794213/2197_zwopny.jpg",
+      "price": 2.99,
+      "soldTickets": 12543,
+      "maxTickets": 50000,
+      "progress": 25.1
+    },
+    {
+      "id": "2",
+      "title": "Premium Prize Competition",
+      "image": "https://res.cloudinary.com/dtaegi6gk/image/upload/v1761794205/4648_t66gvq.jpg",
+      "price": 2.99,
+      "soldTickets": 12543,
+      "maxTickets": 50000,
+      "progress": 25.1
+    },
+    {
+      "id": "3",
+      "title": "Luxury Car Giveaway",
+      "image": "https://res.cloudinary.com/dtaegi6gk/image/upload/v1761794213/2197_zwopny.jpg",
+      "price": 2.99,
+      "soldTickets": 12543,
+      "maxTickets": 50000,
+      "progress": 25.1
+    },
+    {
+      "id": "4",
+      "title": "Dream Vacation Package",
+      "image": "https://res.cloudinary.com/dtaegi6gk/image/upload/v1761794205/4648_t66gvq.jpg",
+      "price": 2.99,
+      "soldTickets": 12543,
+      "maxTickets": 50000,
+      "progress": 25.1
+    },
+    {
+      "id": "5",
+      "title": "Cash Prize Competition",
+      "image": "https://res.cloudinary.com/dtaegi6gk/image/upload/v1761794213/2197_zwopny.jpg",
+      "price": 2.99,
+      "soldTickets": 12543,
+      "maxTickets": 50000,
+      "progress": 25.1
+    },
+    {
+      "id": "6",
+      "title": "Tech Bundle Giveaway",
+      "image": "https://res.cloudinary.com/dtaegi6gk/image/upload/v1761794205/4648_t66gvq.jpg",
+      "price": 2.99,
+      "soldTickets": 12543,
+      "maxTickets": 50000,
+      "progress": 25.1
+    },
+    {
+      "id": "7",
+      "title": "£1000 Amazon Gift Card",
+      "image": "https://res.cloudinary.com/dtaegi6gk/image/upload/v1761794213/2197_zwopny.jpg",
+      "price": 1.99,
+      "soldTickets": 8756,
+      "maxTickets": 30000,
+      "progress": 29.2
+    },
+    {
+      "id": "8",
+      "title": "Luxury Watch Collection",
+      "image": "https://res.cloudinary.com/dtaegi6gk/image/upload/v1761794205/4648_t66gvq.jpg",
+      "price": 3.99,
+      "soldTickets": 23456,
+      "maxTickets": 75000,
+      "progress": 31.3
+    },
+    {
+      "id": "9",
+      "title": "Gaming Console Bundle",
+      "image": "https://res.cloudinary.com/dtaegi6gk/image/upload/v1761794213/2197_zwopny.jpg",
+      "price": 2.49,
+      "soldTickets": 15678,
+      "maxTickets": 40000,
+      "progress": 39.2
+    },
+    {
+      "id": "10",
+      "title": "Designer Handbag Collection",
+      "image": "https://res.cloudinary.com/dtaegi6gk/image/upload/v1761794205/4648_t66gvq.jpg",
+      "price": 4.99,
+      "soldTickets": 9876,
+      "maxTickets": 25000,
+      "progress": 39.5
+    },
+    {
+      "id": "11",
+      "title": "£5000 Cash Prize",
+      "image": "https://res.cloudinary.com/dtaegi6gk/image/upload/v1761794213/2197_zwopny.jpg",
+      "price": 5.99,
+      "soldTickets": 34567,
+      "maxTickets": 100000,
+      "progress": 34.6
+    },
+    {
+      "id": "12",
+      "title": "Luxury Home Appliances",
+      "image": "https://res.cloudinary.com/dtaegi6gk/image/upload/v1761794205/4648_t66gvq.jpg",
+      "price": 3.49,
+      "soldTickets": 18923,
+      "maxTickets": 60000,
+      "progress": 31.5
+    }
+  ],
+  "champions": [
+    {
+      "id": 1,
+      "name": "Darren Compton",
+      "image": "https://res.cloudinary.com/dtaegi6gk/image/upload/v1761794213/2197_zwopny.jpg",
+      "quote": "Getting the call on that Sunday night from Peter to tell us that we had won the villa in Spain or 200k was a moment we will never forget and certainly a great way to start the week! The team have been absolutely amazing, sorting out travel arrangements and putting no pressure on what prize to choose. In the end we decided to take the cash, which means we can finally finish our own house renovations…much to my wifes delight! Even now, it still doesnt quite feel real. We never expected to get such a big competition but as they say you have got to be in it to get it. Thank you to all at McKinneys"
+    },
+    {
+      "id": 2,
+      "name": "Sarah Mitchell",
+      "image": "https://res.cloudinary.com/dtaegi6gk/image/upload/v1761794205/4648_t66gvq.jpg",
+      "quote": "I still can't believe I won! This has completely changed my life and I am forever grateful to DJ Giveaways for this amazing opportunity. The process was so smooth and the team were incredibly helpful throughout."
+    },
+    {
+      "id": 3,
+      "name": "James Anderson",
+      "image": "https://res.cloudinary.com/dtaegi6gk/image/upload/v1761794213/2197_zwopny.jpg",
+      "quote": "Winning the luxury car competition was beyond my wildest dreams! DJ Giveaways made everything so easy and professional. I would definitely enter again!"
+    },
+    {
+      "id": 4,
+      "name": "Emma Thompson",
+      "image": "https://res.cloudinary.com/dtaegi6gk/image/upload/v1761794205/4648_t66gvq.jpg",
+      "quote": "Absolutely thrilled with my prize! The team was incredibly professional and the whole experience was seamless. Would highly recommend to anyone!"
+    },
+    {
+      "id": 5,
+      "name": "Michael O'Connor",
+      "image": "https://res.cloudinary.com/dtaegi6gk/image/upload/v1761794213/2197_zwopny.jpg",
+      "quote": "Won the cash prize and it couldn't have come at a better time. The process was straightforward and the support team was excellent throughout."
+    },
+    {
+      "id": 6,
+      "name": "Lisa Williams",
+      "image": "https://res.cloudinary.com/dtaegi6gk/image/upload/v1761794205/4648_t66gvq.jpg",
+      "quote": "Dream come true! The vacation package was exactly as described and the team helped with all the arrangements. Thank you so much!"
+    },
+    {
+      "id": 7,
+      "name": "David Brown",
+      "image": "https://res.cloudinary.com/dtaegi6gk/image/upload/v1761794213/2197_zwopny.jpg",
+      "quote": "Incredible experience from start to finish. The prize arrived quickly and was exactly what I hoped for. Already entered another competition!"
+    },
+    {
+      "id": 8,
+      "name": "Sophie Johnson",
+      "image": "https://res.cloudinary.com/dtaegi6gk/image/upload/v1761794205/4648_t66gvq.jpg",
+      "quote": "So grateful to have won! The team made everything so easy and I couldn't be happier with my prize. Highly recommend!"
+    }
+  ],
+  "stats": [
+    {
+      "value": "21K+",
+      "label": "Champions",
+      "icon": "trophy"
+    },
+    {
+      "value": "£65M+",
+      "label": "In Prizes",
+      "icon": "money"
+    },
+    {
+      "value": "£550K+",
+      "label": "Donated to Charity",
+      "icon": "heart"
+    },
+    {
+      "value": "500K+",
+      "label": "Followers",
+      "icon": "users"
+    }
+  ],
+  "recentDraws": [
+    {
+      "id": 1,
+      "winner": "Steven Fox",
+      "location": "Dungannon",
+      "prize": "Volvo XC40 D4 R-Design Pro OR",
+      "prizeValue": "£15,000",
+      "ticketNumber": "10373",
+      "drawDate": "Tue 28th October 2025 10:30 PM",
+      "image": "https://res.cloudinary.com/dtaegi6gk/image/upload/v1761794213/2197_zwopny.jpg"
+    },
+    {
+      "id": 2,
+      "winner": "Nadine Quigley",
+      "location": "Roslea",
+      "prize": "Pro Tools 280-Piece Rolling Tool Kit",
+      "prizeValue": "",
+      "ticketNumber": "956",
+      "drawDate": "Sun 26th October 2025 10:30 PM",
+      "image": "https://res.cloudinary.com/dtaegi6gk/image/upload/v1761794205/4648_t66gvq.jpg"
+    },
+    {
+      "id": 3,
+      "winner": "Lynne McQuitty",
+      "location": "BELFAST",
+      "prize": "Ninja Appliance Bundle",
+      "prizeValue": "",
+      "ticketNumber": "2985",
+      "drawDate": "Sun 26th October 2025 10:30 PM",
+      "image": "https://res.cloudinary.com/dtaegi6gk/image/upload/v1761794213/2197_zwopny.jpg"
+    }
+  ],
+  "reviews": [
+    {
+      "id": 1,
+      "title": "So easy and affordable",
+      "body": "The chance to win something that can change your life for the better is amazing. The process is simple and the prizes are incredible!",
+      "rating": 5,
+      "reviewer": "customer",
+      "timeAgo": "18 hours ago",
+      "verified": true
+    },
+    {
+      "id": 2,
+      "title": "The website is very eas...",
+      "body": "The website is very easy to access, information is clear and detailed, easy to navigate and understand. Great experience overall!",
+      "rating": 5,
+      "reviewer": "Catherine",
+      "timeAgo": "19 hours ago",
+      "verified": true
+    },
+    {
+      "id": 3,
+      "title": "Great prizes",
+      "body": "Great prizes, nice people :) The whole experience was fantastic and I would definitely recommend to others.",
+      "rating": 5,
+      "reviewer": "Paula Mckevitt",
+      "timeAgo": "19 hours ago",
+      "verified": true
+    },
+    {
+      "id": 4,
+      "title": "It was great tks very m...",
+      "body": "It was great tks very much. The service was excellent and the prize arrived quickly. Very happy with everything!",
+      "rating": 5,
+      "reviewer": "Padraig Butler",
+      "timeAgo": "20 hours ago",
+      "verified": true
+    },
+    {
+      "id": 5,
+      "title": "Super service",
+      "body": "Very fast, efficient, no frills, exactly what you need. The team was professional and helpful throughout the entire process.",
+      "rating": 5,
+      "reviewer": "Joan Looby",
+      "timeAgo": "20 hours ago",
+      "verified": false
+    },
+    {
+      "id": 6,
+      "title": "Amazing experience",
+      "body": "Couldn't believe I won! The whole process was smooth and the prize was exactly as described. Highly recommended!",
+      "rating": 5,
+      "reviewer": "Mark Taylor",
+      "timeAgo": "1 day ago",
+      "verified": true
+    },
+    {
+      "id": 7,
+      "title": "Excellent prizes",
+      "body": "The prizes are amazing and the competition is fair. I've entered multiple times and always had a great experience.",
+      "rating": 5,
+      "reviewer": "Rachel Green",
+      "timeAgo": "1 day ago",
+      "verified": true
+    },
+    {
+      "id": 8,
+      "title": "Fantastic service",
+      "body": "The team was incredibly helpful and the prize arrived quickly. Would definitely enter more competitions in the future!",
+      "rating": 5,
+      "reviewer": "Tom Wilson",
+      "timeAgo": "2 days ago",
+      "verified": true
+    }
+  ]
+}
