@@ -16,6 +16,12 @@
     "noEmit": true,
     "jsx": "react-jsx",
 
+    /* Path Aliases */
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,
@@ -25,8 +31,6 @@
     "noUncheckedSideEffectImports": true
   },
   "include": [
-    "src",
-    "../Royal Competitions/src/utils/apiHelpers.ts",
-    "../Royal Competitions/src/utils/errorHelpers.ts"
+    "src"
   ]
 }

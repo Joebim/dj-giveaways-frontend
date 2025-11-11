@@ -26,7 +26,7 @@ const RecentDrawCard: React.FC<RecentDrawCardProps> = ({ draw }) => {
       whileHover={{ y: -5 }}
       transition={{ duration: 0.3 }}
     >
-      <div className="bg-black border border-gold-primary/20 rounded-lg overflow-hidden hover:shadow-xl hover:border-gold-primary/50 transition-all duration-300 group">
+      <div className="bg-black-soft border border-gold-primary/30 rounded-lg overflow-hidden hover:shadow-xl hover:border-gold-primary/70 transition-all duration-300 group gold-hover-glow">
         {/* Image */}
         <div className="relative h-[215px] bg-black overflow-hidden">
           <img
@@ -35,21 +35,21 @@ const RecentDrawCard: React.FC<RecentDrawCardProps> = ({ draw }) => {
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
-          <div className="absolute top-3 left-3 bg-gold-primary/90 backdrop-blur-sm px-3 py-1 rounded-full border border-gold-primary">
-            <span className="text-xs font-light text-black tracking-widest uppercase">WINNER</span>
+          <div className="absolute top-3 left-3 bg-gold-primary/90 backdrop-blur-sm px-3 py-1 rounded-full border border-gold-primary gold-glow">
+            <span className="text-xs font-bold text-black tracking-widest uppercase">WINNER</span>
           </div>
         </div>
 
         {/* Content */}
-        <div className="p-6 relative bg-black border-t border-gold-primary/10">
+        <div className="p-6 relative bg-black-soft border-t border-gold-primary/30">
           {/* Winner Info */}
           <div className="flex items-center gap-3 mb-4">
             <div>
-              <h3 className="text-xl font-light text-white ">{draw.winner}</h3>
+              <h3 className="text-xl font-bold text-navy-light">{draw.winner}</h3>
             </div>
             <div className="flex items-center gap-1">
               <FaMapMarkerAlt className="w-3.5 h-3.5 text-gold-primary" />
-              <p className="text-sm font-light text-gold-primary/80">{draw.location}</p>
+              <p className="text-sm font-medium text-navy-primary">{draw.location}</p>
             </div>
           </div>
 
@@ -59,9 +59,9 @@ const RecentDrawCard: React.FC<RecentDrawCardProps> = ({ draw }) => {
               <FaTrophy className="w-3.5 h-3.5 text-gold-primary" />
             </div>
             <div>
-              <p className="text-sm font-light text-white leading-tight">{draw.prize}</p>
+              <p className="text-sm font-medium text-navy-light leading-tight">{draw.prize}</p>
               {draw.prizeValue && (
-                <p className="text-sm font-light text-gold-primary mt-1">{draw.prizeValue}</p>
+                <p className="text-sm font-bold text-gold-primary mt-1 gold-text-glow">{draw.prizeValue}</p>
               )}
             </div>
           </div>
@@ -69,19 +69,19 @@ const RecentDrawCard: React.FC<RecentDrawCardProps> = ({ draw }) => {
           {/* Ticket Number */}
           <div className="mb-3 flex items-center gap-3">
             <FaTicketAlt className="w-3.5 h-3.5 text-gold-primary" />
-            <p className="text-sm font-light text-white/80">Ticket #{draw.ticketNumber}</p>
+            <p className="text-sm font-medium text-navy-primary">Ticket #{draw.ticketNumber}</p>
           </div>
 
           {/* Date */}
           <div className="mb-4 flex items-center gap-3">
             <FaCalendar className="w-3.5 h-3.5 text-gold-primary" />
-            <p className="text-sm font-light text-white/80">{draw.drawDate}</p>
+            <p className="text-sm font-medium text-navy-primary">{draw.drawDate}</p>
           </div>
 
           {/* Watch Live Draw Button */}
           <Link to="/draws" className="block">
             <motion.button
-              className="w-full gold-gradient hover:opacity-90 text-black font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:shadow-lg flex items-center justify-center gap-2 text-sm uppercase tracking-wider"
+              className="w-full gold-gradient hover:opacity-90 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 text-sm uppercase tracking-wider gold-glow hover:gold-glow"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >

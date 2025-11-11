@@ -21,7 +21,7 @@ const ChampionCard: React.FC<ChampionCardProps> = ({ champion }) => {
       whileHover={{ y: -5 }}
       transition={{ duration: 0.3 }}
     >
-      <div className="bg-black border border-gold-primary/20 rounded-lg overflow-hidden hover:shadow-xl hover:border-gold-primary/50 transition-all duration-300 group">
+      <div className="bg-black-soft border border-gold-primary/30 rounded-lg overflow-hidden hover:shadow-xl hover:border-gold-primary/70 transition-all duration-300 group gold-hover-glow">
       <div className="relative h-[292px] overflow-hidden">
         <img
           src={champion.image}
@@ -30,17 +30,17 @@ const ChampionCard: React.FC<ChampionCardProps> = ({ champion }) => {
         />
           <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-transparent"></div>
       </div>
-        <div className="p-6 bg-black border-t border-gold-primary/10">
+        <div className="p-6 bg-black-soft border-t border-gold-primary/30">
         <div className="text-center mb-4">
-            <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gold-primary/10 border border-gold-primary/30 mb-2">
+            <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gold-primary/20 border border-gold-primary/50 mb-2 gold-hover-glow">
               <FaQuoteLeft className="w-5 h-5 text-gold-primary" />
             </div>
           </div>
-          <p className="text-white/80 text-sm leading-relaxed italic font-light">
+          <p className="text-navy-primary text-sm leading-relaxed italic font-medium">
           {champion.quote}
         </p>
-          <div className="mt-4 pt-4 border-t border-gold-primary/10">
-            <p className="text-sm font-light text-gold-primary">— {champion.name}</p>
+          <div className="mt-4 pt-4 border-t border-gold-primary/30">
+            <p className="text-sm font-bold text-gold-primary gold-text-glow">— {champion.name}</p>
           </div>
         </div>
       </div>

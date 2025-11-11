@@ -91,12 +91,12 @@ export const PAYMENT_STATUS = {
 
 // Local Storage Keys
 export const STORAGE_KEYS = {
-  AUTH_TOKEN: "royal_competitions_auth_token",
-  REFRESH_TOKEN: "royal_competitions_refresh_token",
-  USER_DATA: "royal_competitions_user_data",
-  CART_DATA: "royal_competitions_cart_data",
-  THEME: "royal_competitions_theme",
-  LANGUAGE: "royal_competitions_language",
+  AUTH_TOKEN: "dj_giveaways_auth_token",
+  REFRESH_TOKEN: "dj_giveaways_refresh_token",
+  USER_DATA: "dj_giveaways_user_data",
+  CART_DATA: "dj_giveaways_cart_data",
+  THEME: "dj_giveaways_theme",
+  LANGUAGE: "dj_giveaways_language",
 } as const;
 
 // Pagination
@@ -142,17 +142,15 @@ export const FILE_UPLOAD = {
 
 // Social Media
 export const SOCIAL_LINKS = {
-  FACEBOOK: "https://facebook.com/royalcompetitions",
-  TWITTER: "https://twitter.com/royalcompetitions",
-  INSTAGRAM: "https://instagram.com/royalcompetitions",
-  YOUTUBE: "https://youtube.com/royalcompetitions",
-  TIKTOK: "https://tiktok.com/@royalcompetitions",
+  FACEBOOK: "https://www.facebook.com/DJ.GiveawayLtd/",
+  INSTAGRAM: "https://instagram.com/djgiveaways",
 } as const;
 
 // Contact Information
 export const CONTACT_INFO = {
-  EMAIL: "support@royalcompetitions.com",
+  EMAIL: "support@djgiveaways.com",
   PHONE: "+44 20 1234 5678",
+  DOMAIN: "www.djgiveaways.com",
   ADDRESS: {
     LINE1: "123 Royal Street",
     CITY: "London",

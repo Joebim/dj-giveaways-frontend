@@ -78,11 +78,11 @@ const Draws: React.FC = () => {
   const canGoForward = page < totalPages;
 
   return (
-    <div className="min-h-screen bg-black">
-      <section className="py-32 bg-black-soft border-b border-gold-primary/10">
+    <div className="min-h-screen bg-white">
+      <section className="py-32 bg-gray-50 border-b border-gold-primary/20">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12 text-center">
           <motion.h1
-            className="text-5xl md:text-6xl font-light text-white mb-6 tracking-tight"
+            className="text-5xl md:text-6xl font-light text-navy-primary mb-6 tracking-tight"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -90,7 +90,7 @@ const Draws: React.FC = () => {
             Recent Draws
           </motion.h1>
           <motion.p
-            className="text-xl text-white/70 font-light max-w-3xl mx-auto"
+            className="text-xl text-gray-700 font-light max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -100,14 +100,14 @@ const Draws: React.FC = () => {
         </div>
       </section>
 
-      <section className="py-20 bg-black">
+      <section className="py-20 bg-white">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
           {isLoading && !data ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[...Array(6)].map((_, index) => (
                 <div
                   key={index}
-                  className="h-[340px] bg-black-soft border border-gold-primary/10 rounded-xl animate-pulse"
+                  className="h-[340px] bg-gray-50 border border-gold-primary/20 rounded-xl animate-pulse"
                 >
                   <div className="h-48 bg-white/10 rounded-t-xl" />
                   <div className="p-6 space-y-3">
@@ -119,8 +119,8 @@ const Draws: React.FC = () => {
               ))}
             </div>
           ) : draws.length === 0 ? (
-            <div className="bg-black-soft border border-gold-primary/20 rounded-xl p-12 text-center">
-              <p className="text-white/70 text-lg font-light">
+            <div className="bg-gray-50 border border-gold-primary/20 rounded-xl p-12 text-center">
+              <p className="text-gray-700 text-lg font-light">
                 No draws have been published yet. Check back soon for our latest winners.
               </p>
             </div>
@@ -141,7 +141,7 @@ const Draws: React.FC = () => {
                   <FaArrowLeft className="w-4 h-4" />
                   Previous
                 </button>
-                <p className="text-white/60 font-light">
+                <p className="text-gray-600 font-light">
                   Page <span className="text-gold-primary">{page}</span> of{" "}
                   <span className="text-gold-primary">{totalPages}</span>
                 </p>

@@ -14,7 +14,7 @@ type MotionButtonProps = React.ComponentProps<typeof motion.button>;
 
 export interface ButtonProps
     extends Omit<MotionButtonProps, 'children'> {
-    variant?: 'primary' | 'secondary' | 'outline' | 'ghost' | 'danger';
+    variant?: 'primary' | 'secondary' | 'outline' | 'ghost' | 'danger' | 'enter';
     size?: 'sm' | 'md' | 'lg';
     loading?: boolean;
     leftIcon?: React.ReactNode;
@@ -44,11 +44,12 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         const baseClasses = 'inline-flex items-center justify-center font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black disabled:opacity-50 disabled:cursor-not-allowed relative overflow-hidden';
 
         const variants = {
-            primary: 'bg-gradient-to-r from-gold-primary via-gold-light to-gold-primary text-navy-primary hover:from-gold-light hover:via-gold-primary hover:to-gold-light focus:ring-gold-primary shadow-lg hover:shadow-xl gold-text-glow font-bold',
-            secondary: 'bg-navy-primary border-2 border-gold-primary text-gold-primary hover:bg-navy-light hover:border-gold-light focus:ring-gold-primary',
-            outline: 'border-2 border-gold-primary text-gold-primary hover:bg-gold-primary/10 focus:ring-gold-primary backdrop-blur-sm',
-            ghost: 'text-gold-primary hover:bg-gold-primary/10 focus:ring-gold-primary',
-            danger: 'bg-red-600 text-white hover:bg-red-700 focus:ring-red-500',
+            primary: 'gold-gradient text-white hover:opacity-90 focus:ring-2 focus:ring-gold-primary focus:ring-offset-2 focus:ring-offset-black shadow-lg hover:shadow-xl font-bold gold-glow hover:gold-glow',
+            enter: 'bg-[#00FF85] text-black hover:bg-[#00E677] focus:ring-2 focus:ring-[#00FF85] focus:ring-offset-2 focus:ring-offset-black shadow-lg hover:shadow-xl font-bold electric-green-glow hover:electric-green-glow',
+            secondary: 'bg-black-soft border-2 border-gold-primary text-gold-primary hover:bg-gold-primary/10 hover:border-gold-light focus:ring-2 focus:ring-gold-primary gold-hover-glow',
+            outline: 'border-2 border-gold-primary/50 text-gold-primary hover:border-gold-primary hover:bg-gold-primary/10 focus:ring-2 focus:ring-gold-primary bg-transparent',
+            ghost: 'text-gold-primary hover:bg-gold-primary/10 focus:ring-2 focus:ring-gold-primary',
+            danger: 'bg-red-600 text-white hover:bg-red-700 focus:ring-2 focus:ring-red-500 shadow-lg hover:shadow-xl',
         };
 
         const sizes = {

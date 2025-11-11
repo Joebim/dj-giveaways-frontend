@@ -17,6 +17,7 @@ import CompetitionCard from "../../components/home/CompetitionCard";
 import ChampionCard from "../../components/home/ChampionCard";
 import ReviewCard from "../../components/home/ReviewCard";
 import RecentDrawCard from "../../components/home/RecentDrawCard";
+import HeroSlideshow from "../../components/home/HeroSlideshow";
 import { contentService } from "../../services";
 
 const baseIconClasses = "w-8 h-8 text-gold-primary";
@@ -72,8 +73,6 @@ const Home: React.FC = () => {
     return () => clearInterval(interval);
   }, [championsCarouselApi]);
 
-  const heroImage = homeContent?.hero?.image ?? FALLBACK_IMAGE;
-
   const competitions = useMemo(() => {
     return (
       homeContent?.competitions.map((competition) => ({
@@ -87,6 +86,19 @@ const Home: React.FC = () => {
       })) ?? []
     );
   }, [homeContent]);
+
+  // Featured competitions for hero slideshow (first 3-5 competitions)
+  const featuredCompetitions = useMemo(() => {
+    return competitions.slice(0, 5).map((comp) => ({
+      id: comp.id,
+      title: comp.title,
+      image: comp.image,
+      price: comp.price,
+      soldTickets: comp.soldTickets,
+      maxTickets: comp.maxTickets,
+      description: `Win this amazing prize! Only £${comp.price.toFixed(2)} per ticket.`,
+    }));
+  }, [competitions]);
 
   const champions = useMemo(() => {
     return (
@@ -144,20 +156,10 @@ const Home: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-black">
-      <section className="relative overflow-hidden" style={{ height: "670px" }}>
-        <div className="absolute inset-0">
-          <img
-            src={heroImage}
-            alt={homeContent?.hero?.alt ?? "DJ Giveaways hero banner"}
-            className="w-full h-full object-cover"
-            onError={(event) => {
-              const target = event.target as HTMLImageElement;
-              target.src = FALLBACK_IMAGE;
-            }}
-          />
-          <div className="absolute bottom-0 left-0 right-0 h-96 bg-gradient-to-t from-black via-black/80 to-transparent pointer-events-none"></div>
-        </div>
-      </section>
+      {/* Hero Slideshow */}
+      {featuredCompetitions.length > 0 && (
+        <HeroSlideshow competitions={featuredCompetitions} />
+      )}
 
       <section className="py-[80px] bg-black">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
@@ -167,10 +169,10 @@ const Home: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-4xl font-light text-white mb-4  tracking-tight">
-              Our <span className="text-gold-primary">Live</span> Competitions
+            <h2 className="text-4xl font-bold text-navy-light mb-4 tracking-tight">
+              Our <span className="text-gold-primary gold-text-glow">Live</span> Competitions
             </h2>
-            <p className="text-white/60 text-sm font-light tracking-wide uppercase">
+            <p className="text-navy-primary text-sm font-medium tracking-wide uppercase">
               Premium Prizes Await
             </p>
           </motion.div>
@@ -180,7 +182,7 @@ const Home: React.FC = () => {
               {Array.from({ length: 6 }).map((_, index) => (
                 <div
                   key={index}
-                  className="h-[420px] rounded-xl border border-gold-primary/10 bg-black-soft animate-pulse"
+                  className="h-[420px] rounded-xl border border-gold-primary/30 bg-black-soft animate-pulse"
                 />
               ))}
             </div>
@@ -201,7 +203,7 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      <section className="py-[80px] bg-black">
+      <section className="py-[80px] bg-black-soft">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
           <motion.div
             className="mb-16"
@@ -209,11 +211,11 @@ const Home: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <p className="text-xs text-gold-primary font-light mb-3 uppercase tracking-widest">
+            <p className="text-xs text-gold-primary font-semibold mb-3 uppercase tracking-widest gold-text-glow">
               From all over UK & Ireland
             </p>
-            <h2 className="text-4xl font-light text-white  tracking-tight">
-              Our Champions
+            <h2 className="text-4xl font-bold text-navy-light tracking-tight">
+              Our <span className="text-gold-primary gold-text-glow">Champions</span>
             </h2>
           </motion.div>
 
@@ -243,30 +245,30 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      <section className="py-[100px] bg-black-soft border-t border-gold-primary/10">
+      <section className="py-[100px] bg-black border-t border-gold-primary/30">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-0 bg-black-soft border border-gold-primary/20 rounded-lg overflow-hidden">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-0 bg-black-soft border border-gold-primary/30 rounded-lg overflow-hidden gold-border-glow">
             {stats.map((stat, index) => (
               <motion.div
                 key={stat.key ?? index}
                 className={`text-center px-6 py-16 ${index !== stats.length - 1
-                  ? "border-r border-gold-primary/10"
+                  ? "border-r border-gold-primary/20"
                   : ""
-                  } hover:bg-gold-primary/5 transition-all duration-300 group`}
+                  } hover:bg-gold-primary/10 transition-all duration-300 group`}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 whileHover={{ scale: 1.02 }}
               >
                 <div className="flex justify-center mb-4">
-                  <div className="w-16 h-16 rounded-full bg-gold-primary/10 border border-gold-primary/30 flex items-center justify-center group-hover:bg-gold-primary/20 transition-all duration-300">
+                  <div className="w-16 h-16 rounded-full bg-gold-primary/20 border border-gold-primary/50 flex items-center justify-center group-hover:bg-gold-primary/30 transition-all duration-300 gold-hover-glow">
                     {getStatIcon(stat.key, stat.label)}
                   </div>
                 </div>
-                <div className="text-5xl font-light text-gold-primary mb-3  group-hover:scale-110 transition-transform duration-300">
+                <div className="text-5xl font-bold text-gold-primary mb-3 group-hover:scale-110 transition-transform duration-300 gold-text-glow">
                   {stat.value}
                 </div>
-                <p className="text-white/60 font-light uppercase tracking-widest text-xs">
+                <p className="text-navy-primary font-medium uppercase tracking-widest text-xs">
                   {stat.label}
                 </p>
               </motion.div>
@@ -276,7 +278,7 @@ const Home: React.FC = () => {
       </section>
 
       {recentDraws.length > 0 && (
-        <section className="py-[80px] bg-black border-t border-gold-primary/10">
+        <section className="py-[80px] bg-black-soft border-t border-gold-primary/30">
           <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
             <motion.div
               className="mb-16"
@@ -284,11 +286,11 @@ const Home: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <p className="text-xs text-gold-primary font-light mb-3 uppercase tracking-widest">
+              <p className="text-xs font-semibold mb-3 uppercase tracking-widest neon-orange-text" style={{ color: '#FF9500' }}>
                 Fresh off the live draw
               </p>
-              <h2 className="text-4xl font-light text-white  tracking-tight">
-                Latest Winners
+              <h2 className="text-4xl font-bold text-navy-light tracking-tight">
+                Latest <span className="text-gold-primary gold-text-glow">Winners</span>
               </h2>
             </motion.div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -307,7 +309,7 @@ const Home: React.FC = () => {
         </section>
       )}
 
-      <section className="py-[100px] bg-black-soft border-t border-gold-primary/10">
+      <section className="py-[100px] bg-black border-t border-gold-primary/30">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
           <motion.div
             className="mb-16"
@@ -315,10 +317,10 @@ const Home: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-4xl font-light text-white mb-4  tracking-tight">
-              We are <span className="text-gold-primary">Trusted</span>
+            <h2 className="text-4xl font-bold text-navy-light mb-4 tracking-tight">
+              We are <span className="text-gold-primary gold-text-glow">Trusted</span>
             </h2>
-            <p className="text-white/60 text-sm font-light tracking-wide uppercase">
+            <p className="text-navy-primary text-sm font-medium tracking-wide uppercase">
               Customer Reviews
             </p>
           </motion.div>
@@ -352,8 +354,8 @@ const Home: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            <p className="text-white/60 text-sm font-light mb-2">
-              Rated <span className="font-semibold text-white">4.8</span> / 5 by
+            <p className="text-navy-primary text-sm font-medium mb-2">
+              Rated <span className="font-bold text-navy-light">4.8</span> / 5 by
               our champions. Showing verified five star reviews.
             </p>
             <div className="flex items-center justify-center gap-2">
